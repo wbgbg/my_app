@@ -1,0 +1,51 @@
+注册用户root
+HTTP/1.0 201 CREATED
+Content-Type: application/json
+Content-Length: 24
+Location: http://localhost:5000/api/users/1
+Server: Werkzeug/0.10.4 Python/2.7.6
+Date: Sun, 12 Apr 2015 17:03:57 GMT
+
+{
+  "username": "root"
+}请求token
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 159
+Server: Werkzeug/0.10.4 Python/2.7.6
+Date: Sun, 12 Apr 2015 17:03:57 GMT
+
+{
+  "duration": 600, 
+  "token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQyODg1ODgzNywiaWF0IjoxNDI4ODU4MjM3fQ.eyJpZCI6MX0.mUi1D5amRNV1K8p31IsIhJovCusKmhWYekTqH4vbdzo"
+}关注商品1271499
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 2
+Server: Werkzeug/0.10.4 Python/2.7.6
+Date: Sun, 12 Apr 2015 17:03:57 GMT
+
+ok请求用户收藏的商品
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 21
+Server: Werkzeug/0.10.4 Python/2.7.6
+Date: Sun, 12 Apr 2015 17:03:57 GMT
+
+{
+  "1217499": null
+}删除商品1271499
+HTTP/1.0 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 2
+Server: Werkzeug/0.10.4 Python/2.7.6
+Date: Sun, 12 Apr 2015 17:03:57 GMT
+
+ok请求用户收藏的商品
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 2
+Server: Werkzeug/0.10.4 Python/2.7.6
+Date: Sun, 12 Apr 2015 17:03:57 GMT
+
+{}删除数据库
