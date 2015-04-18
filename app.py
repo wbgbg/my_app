@@ -2,7 +2,8 @@
 # -*- coding:utf8 -*-
 #encoding = utf-8
 import os,sys
-import urllib,time
+import time
+import urllib,time,json
 #import sae.const
 from flask import Flask,abort,request,jsonify,g,url_for
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -12,7 +13,7 @@ from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer,BadSigna
 #from uwsgidecorators import *
 
 app = Flask(__name__)
-app.debug = True
+
 app.config['SECRET_KEY'] = 'CZH IS DIAO BAO LE'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/db.sqlite'
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
@@ -140,10 +141,10 @@ def favorite():
 	return(jsonify(respon),200,())
 		
 #@timer(refresh_time)
-@app.route('/api/fetch/<int:hkd>',methods=['GET'])
+@app.route('/api/fetch/<hkd>')
 def fetch_product(hkd):
 	#for now_product in JDProduct.query.all():
-	ukd="J_"+"%d" %hkd
+	ukd="J_"+hkd
 	apipath="https://api.jd.com/routerjson?v=2.0&"
 	method="method=jingdong.ware.price.get&"
 	app_key="app_key=84F0963912EA9D56CD29E8EB3E774A2B&"
@@ -155,15 +156,20 @@ def fetch_product(hkd):
 	st = f.read()
 	js = json.loads(st)
 	price = js[u"jingdong_ware_price_get_responce"][u"price_changes"][0][u"price"]
-	fil = open("/home/nowlog",'a')
-	fil.write(price)
-	fil.close
+#	fil = open("/home/nowlog",'a')
+#	fil.write(price)
+#	fil.close
 	now_product = JDProduct.query.filter_by(hkd=hkd).first()
 	if now_product is not None:
 		if now_product.price != price:
 			now_product.price = price
-			tell_client(nowproduct.hkd)
-	return ukd,price		
+#			tell_client(nowproduct.hkd)
+	return (jsonify({'ukd=':ukd,'price=':price}))		
+#	pass
+#	return "ok"
+#	return st
+#	return js
+
 def tell_client(ukd):
 	pass
 
