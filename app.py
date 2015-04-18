@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-import os
+# -*- coding:utf8 -*-
+#encoding = utf-8
+import os,sys
+#import sae.const
 from flask import Flask,abort,request,jsonify,g,url_for
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.httpauth import HTTPBasicAuth
@@ -7,10 +10,34 @@ from passlib.apps import custom_app_context as pwd_context
 from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer,BadSignature,SignatureExpired)
 
 app = Flask(__name__)
+app.debug = True
 app.config['SECRET_KEY'] = 'CZH IS DIAO BAO LE'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/yugi/db.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/db.sqlite'
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
+#class Config(object):
+#
+#	DEBUG = True
+#	
+#	SECRET_KEY = 'CZH IS DIAO BAO LE'
+#
+#	SQLALCHEMY_DATABASE_URI = 'mysql://%s:%s@%s:%s/%s' % (sae.const.MYSQL_USER,
+#	sae.const.MYSQL_PASS,
+#	sae.const.MYSQL_HOST,
+#	sae.const.MYSQL_PORT,
+#	sae.const.MYSQL_DB)
+#
+#	SQLALCHEMY_ECHO = True
+#
+#class nullpool_SQLAlchemy(SQLAlchemy):
+#	def apply_driver_hacks(self,app,info,options):
+#		super(nullpool_SQLAlchemy,self).apply_driver_hacks(app,info,options)
+#		from sqlalchemy.pool import NullPool
+#		options['poolclass'] = NullPool
+#		del options['pool_size']
+
+
+#db=nullpool_SQLAlchemy(app)
 db=SQLAlchemy(app)
 auth=HTTPBasicAuth()
 #@app.route('/API/v0.1/users',methods=['POST'])
@@ -152,7 +179,7 @@ def get_resource():
 
 @app.route('/')
 def hello_world():
-	return 'Hello World!'
+	return u'好喜欢田艳斐啊'
 @app.route('/czh')
 def czh():
 	return 'sb!'
@@ -166,5 +193,5 @@ def __init__():
 if __name__=='__main__':
 	if not os.path.exists('db.sqlite'):
 		db.create_all()
-	app.run(debug=True)
+	app.run(debug=True,host='0.0.0.0',port=8080)
 	
