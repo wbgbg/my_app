@@ -2,6 +2,7 @@
 # -*- coding:utf8 -*-
 #encoding = utf-8
 import os,sys
+import urllib,time
 #import sae.const
 from flask import Flask,abort,request,jsonify,g,url_for
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -14,7 +15,7 @@ app.debug = True
 app.config['SECRET_KEY'] = 'CZH IS DIAO BAO LE'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/db.sqlite'
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
-
+refresh_time = 60
 #class Config(object):
 #
 #	DEBUG = True
@@ -137,13 +138,31 @@ def favorite():
 		respon[product.hkd]=product.price
 	return(jsonify(respon),200,())
 		
-	
-
-@app.route('/api/fetch',methods=['POST','GET'])
+@timer(refresh_time)
+#@app.route('/api/fetch',methods=['POST','GET'])
 def fetch_product():
 	for now_product in JDProduct.query.all():
-		pass#use JD API to refresh the price		
-
+		ukd="J_"+"%d" % now_product.hkd
+		apipath="https://api.jd.com/routerjson?v=2.0&"
+		method="method=jingdong.ware.price.get&"
+		app_key="app_key=84F0963912EA9D56CD29E8EB3E774A2B&"
+		sku_id="360buy_param_json={%22sku_id%22:%22"+ukd+"%22}&"
+		now=time.localtime()
+		timestamp="timestamp="+time.strftime("%Y-%m-%d %X",now)
+		url=apipath+method+app_key+sku_id+timestamp
+		f = urllib.urlopen(url)
+		st = f.read()
+		js = json.loads(st)
+		price = js[u"jingdong_ware_price_get_responce"][u"price_changes"][0][u"price"]
+		fil = open("/home/nowlog",'a')
+		fil.write(price)
+		fil.close
+		if now_product.price != price:
+			price = now_product.price
+			tell_client(nowproduct.ukd)
+			
+def tell_client(ukd):
+	pass
 
 @app.route('/api/users',methods=['POST'])	
 def new_user():
