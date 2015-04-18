@@ -158,7 +158,7 @@ def fetch_product():
 		fil.write(price)
 		fil.close
 		if now_product.price != price:
-			price = now_product.price
+			now_product.price = price
 			tell_client(nowproduct.ukd)
 			
 def tell_client(ukd):
