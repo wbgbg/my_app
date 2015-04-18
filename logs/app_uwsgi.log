@@ -141,3 +141,350 @@ unable to load app 0 (mountpoint='') (callable not found or import error)
 *** no app loaded. going in full dynamic mode ***
 *** uWSGI is running in multiple interpreter mode ***
 spawned uWSGI worker 1 (and the only) (pid: 18535, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 18535|app: -1|req: -1/1] 123.157.213.238 () {38 vars in 602 bytes} [Sat Apr 18 21:53:15 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.10 (64bit) on [Sat Apr 18 21:54:16 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x11cdf30
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+Traceback (most recent call last):
+  File "/home/GitRepo1/yugi/2/app.py", line 141, in <module>
+    @timer(refresh_time)
+NameError: name 'timer' is not defined
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 18580, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 18580|app: -1|req: -1/1] 123.157.213.238 () {38 vars in 602 bytes} [Sat Apr 18 21:54:16 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 18580|app: -1|req: -1/2] 123.157.213.238 () {42 vars in 655 bytes} [Sat Apr 18 21:54:18 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 18580|app: -1|req: -1/3] 123.157.213.238 () {42 vars in 654 bytes} [Sat Apr 18 21:54:19 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.10 (64bit) on [Sat Apr 18 21:59:52 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c81f30
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+Traceback (most recent call last):
+  File "/home/GitRepo1/yugi/2/app.py", line 12, in <module>
+    from uwsgidecorators import *
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/uwsgidecorators.py", line 14, in <module>
+    "you have to enable the uWSGI master process to use this module")
+Exception: you have to enable the uWSGI master process to use this module
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 18642, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 18642|app: -1|req: -1/1] 123.157.213.238 () {42 vars in 655 bytes} [Sat Apr 18 22:00:25 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.10 (64bit) on [Sat Apr 18 22:06:20 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x116b7a0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+Traceback (most recent call last):
+  File "/home/GitRepo1/yugi/2/app.py", line 12, in <module>
+    from uwsgidecorators import *
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/uwsgidecorators.py", line 14, in <module>
+    "you have to enable the uWSGI master process to use this module")
+Exception: you have to enable the uWSGI master process to use this module
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 18686, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 18686|app: -1|req: -1/1] 123.157.213.238 () {38 vars in 602 bytes} [Sat Apr 18 22:06:28 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.10 (64bit) on [Sat Apr 18 22:08:19 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x11a8f30
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x11a8f30 pid: 18726 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 18726, cores: 1)
+[pid: 18726|app: 0|req: 1/1] 123.157.213.238 () {38 vars in 601 bytes} [Sat Apr 18 22:08:20 2015] GET / => generated 21 bytes in 11 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+Traceback (most recent call last):
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/GitRepo1/yugi/2/app.py", line 146, in fetch_product
+    ukd="J_"+"%d" % now_product.hkd
+TypeError: %d format: a number is required, not unicode
+[pid: 18726|app: 0|req: 2/2] 123.157.213.238 () {40 vars in 659 bytes} [Sat Apr 18 22:08:39 2015] GET /api/fetch => generated 0 bytes in 36 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+[pid: 18726|app: 0|req: 3/3] 123.157.213.238 () {40 vars in 665 bytes} [Sat Apr 18 22:09:16 2015] GET /api/favorite => generated 2 bytes in 141 msecs (HTTP/1.1 200) 2 headers in 70 bytes (1 switches on core 0)
+[pid: 18726|app: 0|req: 4/4] 123.157.213.238 () {40 vars in 673 bytes} [Sat Apr 18 22:09:23 2015] GET /api/favorite/add => generated 178 bytes in 14 msecs (HTTP/1.1 405) 3 headers in 103 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.10 (64bit) on [Sat Apr 18 22:10:08 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1301f30
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1301f30 pid: 18740 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 18740, cores: 1)
+[pid: 18740|app: 0|req: 1/1] 123.157.213.238 () {40 vars in 665 bytes} [Sat Apr 18 22:10:11 2015] GET /api/favorite => generated 2 bytes in 144 msecs (HTTP/1.1 200) 2 headers in 70 bytes (1 switches on core 0)
+[pid: 18740|app: 0|req: 2/2] 123.157.213.238 () {40 vars in 673 bytes} [Sat Apr 18 22:10:14 2015] GET /api/favorite/add => generated 178 bytes in 16 msecs (HTTP/1.1 405) 3 headers in 103 bytes (1 switches on core 0)
+[pid: 18740|app: 0|req: 3/3] 123.157.213.238 () {40 vars in 649 bytes} [Sat Apr 18 22:10:17 2015] GET /api/ => generated 233 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+Traceback (most recent call last):
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/GitRepo1/yugi/2/app.py", line 146, in fetch_product
+    ukd="J_"+"%d" % now_product.hkd
+TypeError: %d format: a number is required, not unicode
+[pid: 18740|app: 0|req: 4/4] 123.157.213.238 () {40 vars in 659 bytes} [Sat Apr 18 22:10:19 2015] GET /api/fetch => generated 0 bytes in 8 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+[pid: 18740|app: 0|req: 5/5] 123.157.213.238 () {42 vars in 661 bytes} [Sat Apr 18 22:11:49 2015] GET /czh => generated 3 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[pid: 18740|app: 0|req: 6/6] 123.157.213.238 () {36 vars in 451 bytes} [Sat Apr 18 22:20:16 2015] POST /api/users => generated 192 bytes in 14 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 0)
+[pid: 18740|app: 0|req: 7/7] 123.157.213.238 () {34 vars in 409 bytes} [Sat Apr 18 22:20:16 2015] GET /api/token => generated 159 bytes in 111 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[]
+1217499
+[<app.JDProduct object at 0x7f714a736690>]
+[pid: 18740|app: 0|req: 8/8] 123.157.213.238 () {38 vars in 505 bytes} [Sat Apr 18 22:20:16 2015] POST /api/favorite/add => generated 2 bytes in 167 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[pid: 18740|app: 0|req: 9/9] 123.157.213.238 () {34 vars in 416 bytes} [Sat Apr 18 22:20:16 2015] GET /api/favorite => generated 21 bytes in 110 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 18740|app: 0|req: 10/10] 123.157.213.238 () {36 vars in 451 bytes} [Sat Apr 18 22:21:58 2015] POST /api/users => generated 192 bytes in 4 msecs (HTTP/1.1 400) 2 headers in 74 bytes (1 switches on core 0)
+[pid: 18740|app: 0|req: 11/11] 123.157.213.238 () {34 vars in 410 bytes} [Sat Apr 18 22:21:58 2015] GET /api/token => generated 159 bytes in 114 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[<app.JDProduct object at 0x7f714a74d8d0>]
+1217499
+[<app.JDProduct object at 0x7f714a74d8d0>, <app.JDProduct object at 0x7f714a74d8d0>]
+[pid: 18740|app: 0|req: 12/12] 123.157.213.238 () {38 vars in 505 bytes} [Sat Apr 18 22:21:58 2015] POST /api/favorite/add => generated 2 bytes in 135 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[<app.JDProduct object at 0x7f714a736cd0>]
+1217500
+[<app.JDProduct object at 0x7f714a7367d0>, <app.JDProduct object at 0x7f714a74d8d0>]
+[pid: 18740|app: 0|req: 13/13] 123.157.213.238 () {38 vars in 505 bytes} [Sat Apr 18 22:21:58 2015] POST /api/favorite/add => generated 2 bytes in 178 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[pid: 18740|app: 0|req: 14/14] 123.157.213.238 () {34 vars in 416 bytes} [Sat Apr 18 22:21:58 2015] GET /api/favorite => generated 41 bytes in 118 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.10 (64bit) on [Sat Apr 18 22:25:46 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1951f30
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+  File "/home/GitRepo1/yugi/2/app.py", line 146
+    ukd="J_"+"%d" hkd
+                    ^
+SyntaxError: invalid syntax
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 19031, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 19031|app: -1|req: -1/1] 123.157.213.238 () {40 vars in 660 bytes} [Sat Apr 18 22:25:51 2015] GET /api/fetch => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 19031|app: -1|req: -1/2] 123.157.213.238 () {38 vars in 602 bytes} [Sat Apr 18 22:25:56 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.10 (64bit) on [Sat Apr 18 22:26:58 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xeebf30
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72760 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xeebf30 pid: 19052 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 19052, cores: 1)
+[pid: 19052|app: 0|req: 1/1] 123.157.213.238 () {38 vars in 602 bytes} [Sat Apr 18 22:27:01 2015] GET / => generated 21 bytes in 10 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 19052|app: 0|req: 2/2] 123.157.213.238 () {40 vars in 660 bytes} [Sat Apr 18 22:27:05 2015] GET /api/fetch => generated 233 bytes in 13 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+Traceback (most recent call last):
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/GitRepo1/yugi/2/venv/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/GitRepo1/yugi/2/app.py", line 156, in fetch_product
+    js = json.loads(st)
+NameError: global name 'json' is not defined
+[pid: 19052|app: 0|req: 3/3] 123.157.213.238 () {40 vars in 676 bytes} [Sat Apr 18 22:27:15 2015] GET /api/fetch/1217499 => generated 0 bytes in 243 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
