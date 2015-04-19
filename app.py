@@ -2,8 +2,10 @@
 # -*- coding:utf8 -*-
 #encoding = utf-8
 import os,sys
+import uwsgi
 import time
 import urllib,time,json
+from uwsgidecorators import *
 #import sae.const
 from flask import Flask,abort,request,jsonify,g,url_for
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -140,11 +142,47 @@ def favorite():
 		respon[product.hkd]=product.price
 	return(jsonify(respon),200,())
 		
+@app.route('/api/jdproducts/<hkd>',methods=['GET'])
+def jdpro():
+	respon ={}
+	for user in user.jdproducts:
+		respon[product.hkd]=product.price
+	return(jsonify(respon),200,())
+
+
 #@timer(refresh_time)
+@app.route('/api/fetch/all')
+def fetch_all():
+	i=1
+	j=i+10
+	respon={}
+	apipath="https://api.jd.com/routerjson?v=2.0&"
+	method="method=jingdong.ware.price.get&"
+	app_key="app_key=84F0963912EA9D56CD29E8EB3E774A2B&"
+	while (j>i) and (JDProduct.query.get(i) is not None):
+		now_product = JDProduct.query.get(i)
+
+		ukd="J_%s"%now_product.hkd
+		now=time.localtime()
+		timestamp="timestamp="+time.strftime("%Y-%m-%d %X",now)
+		sku_id="360buy_param_json={%22sku_id%22:%22"+ukd+"%22}&"
+		url=apipath+method+app_key+sku_id+timestamp
+
+		f = urllib.urlopen(url)
+		st = f.read()
+		js = json.loads(st)
+		price = js[u"jingdong_ware_price_get_responce"][u"price_changes"][0][u"price"]
+		if now_product.price != price:
+			now_product.price = price
+#			tell_client(nowproduct.hkd)
+		respon[now_product.hkd]=price
+		i=i+1
+	return (jsonify(respon),200,())
+
 @app.route('/api/fetch/<hkd>')
-def fetch_product(hkd):
+def fetch_product(hkd=0):
 	#for now_product in JDProduct.query.all():
-	ukd="J_"+hkd
+	ukd="J_%s"%hkd
 	apipath="https://api.jd.com/routerjson?v=2.0&"
 	method="method=jingdong.ware.price.get&"
 	app_key="app_key=84F0963912EA9D56CD29E8EB3E774A2B&"
@@ -155,6 +193,7 @@ def fetch_product(hkd):
 	f = urllib.urlopen(url)
 	st = f.read()
 	js = json.loads(st)
+#	print "%s:%s:%s"%(url,st,js)
 	price = js[u"jingdong_ware_price_get_responce"][u"price_changes"][0][u"price"]
 #	fil = open("/home/nowlog",'a')
 #	fil.write(price)
