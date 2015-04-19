@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf8 -*-
-#encoding = utf-8
+#elncoding = utf-8
 import os,sys
 import uwsgi
 import time
@@ -20,6 +20,9 @@ app.config['SECRET_KEY'] = 'CZH IS DIAO BAO LE'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/db.sqlite'
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 refresh_time = 60
+apipath="https://api.jd.com/routerjson?v=2.0&"
+app_key="app_key=84F0963912EA9D56CD29E8EB3E774A2B&"
+
 #class Config(object):
 #
 #	DEBUG = True
@@ -141,24 +144,40 @@ def favorite():
 	for product in user.jdproducts:
 		respon[product.hkd]=product.price
 	return(jsonify(respon),200,())
-		
+
 @app.route('/api/jdproducts/<hkd>',methods=['GET'])
-def jdpro():
+def jdpro(hkd):
 	respon ={}
 	for user in user.jdproducts:
 		respon[product.hkd]=product.price
 	return(jsonify(respon),200,())
 
+@app.route('/api/jdproducts/price/<hkd>',methods=['GET'])
+def product_price(hkd):
+	respon = {}
+	method = "method=jingdong.ware.baseproduct.get&"	
+	sku_id = "360buy_param_json={%22ids%22:%22"+hkd+"%22,%22base%22:%22name%22}&"
+	now=time.localtime()
+	timestamp="timestamp="+time.strftime("%Y-%m-%d %X",now)
+	url=apipath+method+app_key+sku_id+timestamp
+	print url	
+	f = urllib.urlopen(url)
+	st = f.read()
+	js = json.loads(st)
+	print js
+	name = js[u"jingdong_ware_baseproduct_get_responce"][u"product_base"][0][u"name"]
+	print name
+	respon[hkd] = name
+	return(jsonify(respon),200,())
 
-#@timer(refresh_time)
+
+timer(refresh_time)
 @app.route('/api/fetch/all')
 def fetch_all():
 	i=1
 	j=i+10
 	respon={}
-	apipath="https://api.jd.com/routerjson?v=2.0&"
 	method="method=jingdong.ware.price.get&"
-	app_key="app_key=84F0963912EA9D56CD29E8EB3E774A2B&"
 	while (j>i) and (JDProduct.query.get(i) is not None):
 		now_product = JDProduct.query.get(i)
 
@@ -183,9 +202,7 @@ def fetch_all():
 def fetch_product(hkd=0):
 	#for now_product in JDProduct.query.all():
 	ukd="J_%s"%hkd
-	apipath="https://api.jd.com/routerjson?v=2.0&"
 	method="method=jingdong.ware.price.get&"
-	app_key="app_key=84F0963912EA9D56CD29E8EB3E774A2B&"
 	sku_id="360buy_param_json={%22sku_id%22:%22"+ukd+"%22}&"
 	now=time.localtime()
 	timestamp="timestamp="+time.strftime("%Y-%m-%d %X",now)
@@ -260,5 +277,3 @@ def __init__():
 if __name__=='__main__':
 	if not os.path.exists('db.sqlite'):
 		db.create_all()
-	app.run(debug=True,host='0.0.0.0',port=8080)
-	

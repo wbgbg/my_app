@@ -1432,3 +1432,657 @@ IOError: write error
 [pid: 24389|app: 0|req: 48/48] 123.157.213.46 () {32 vars in 389 bytes} [Sun Apr 19 23:26:58 2015] GET /api/token => generated 159 bytes in 113 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
 [pid: 24389|app: 0|req: 49/49] 123.157.213.46 () {32 vars in 389 bytes} [Sun Apr 19 23:34:45 2015] GET /api/token => generated 159 bytes in 119 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
 [pid: 24389|app: 0|req: 50/50] 123.157.213.230 () {38 vars in 602 bytes} [Sun Apr 19 23:38:07 2015] GET / => generated 21 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 24389|app: 0|req: 51/51] 123.157.213.46 () {32 vars in 389 bytes} [Sun Apr 19 23:48:49 2015] GET /api/token => generated 159 bytes in 108 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 24389|app: 0|req: 52/52] 123.157.213.46 () {32 vars in 389 bytes} [Sun Apr 19 23:48:55 2015] GET /api/token => generated 159 bytes in 110 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 24389|app: 0|req: 53/53] 123.157.213.46 () {32 vars in 390 bytes} [Sun Apr 19 23:50:53 2015] GET /api/token => generated 159 bytes in 111 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 24389|app: 0|req: 54/54] 123.157.213.46 () {32 vars in 390 bytes} [Mon Apr 20 00:03:53 2015] GET /api/token => generated 159 bytes in 115 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 24389|app: 0|req: 55/55] 123.157.213.46 () {32 vars in 390 bytes} [Mon Apr 20 00:04:16 2015] GET /api/token => generated 19 bytes in 113 msecs (HTTP/1.1 401) 3 headers in 146 bytes (1 switches on core 0)
+[pid: 24389|app: 0|req: 56/56] 123.157.213.46 () {30 vars in 361 bytes} [Mon Apr 20 00:04:16 2015] GET /api/token => generated 19 bytes in 110 msecs (HTTP/1.1 401) 3 headers in 146 bytes (1 switches on core 0)
+[pid: 24389|app: 0|req: 57/57] 123.157.213.230 () {40 vars in 666 bytes} [Mon Apr 20 00:08:17 2015] GET /api/favorite => generated 22584 bytes in 189 msecs (HTTP/1.1 200) 2 headers in 74 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/GitRepo1/yugi/2
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (/home/GitRepo1/yugi/2/app_uwsgi.sock)
+running /home/GitRepo1/yugi/2/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/GitRepo1/yugi/2/app_uwsgi.ini
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:02:11 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x111cf10
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+  File "/home/GitRepo1/yugi/2/app.py", line 160
+    sku_id = "360buy_param_json={%22ids%22:%22"+ukd"%22,%22base%22:%22name%22}&"
+                                                                               ^
+SyntaxError: invalid syntax
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 24386)
+spawned uWSGI worker 1 (pid: 24713, cores: 1)
+Mon Apr 20 01:02:21 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:04:20 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x25f9020
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+  File "/home/GitRepo1/yugi/2/app.py", line 160
+    sku_id = "360buy_param_json={%22ids%22:%22"+ukd"%22,%22base%22:%22name%22}&"
+                                                                               ^
+SyntaxError: invalid syntax
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24734)
+spawned uWSGI worker 1 (pid: 24735, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 24735|app: -1|req: -1/1] 123.157.213.230 () {38 vars in 601 bytes} [Mon Apr 20 01:04:59 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/GitRepo1/yugi/2
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (/home/GitRepo1/yugi/2/app_uwsgi.sock)
+running /home/GitRepo1/yugi/2/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/GitRepo1/yugi/2/app_uwsgi.ini
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:05:30 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1640f10
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1640f10 pid: 24734 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 24734)
+spawned uWSGI worker 1 (pid: 24750, cores: 1)
+Mon Apr 20 01:05:40 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:05:57 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1694020
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1694020 pid: 24770 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24770)
+spawned uWSGI worker 1 (pid: 24774, cores: 1)
+[pid: 24774|app: 0|req: 1/1] 123.157.213.230 () {38 vars in 602 bytes} [Mon Apr 20 01:06:05 2015] GET / => generated 21 bytes in 17 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 24774|app: 0|req: 2/2] 123.157.213.230 () {40 vars in 698 bytes} [Mon Apr 20 01:06:29 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 190 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+[pid: 24774|app: 0|req: 3/3] 220.181.127.124 () {38 vars in 621 bytes} [Mon Apr 20 01:06:50 2015] GET / => generated 21 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/GitRepo1/yugi/2
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (/home/GitRepo1/yugi/2/app_uwsgi.sock)
+running /home/GitRepo1/yugi/2/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/GitRepo1/yugi/2/app_uwsgi.ini
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:07:10 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x24a2f10
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x24a2f10 pid: 24770 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 24770)
+spawned uWSGI worker 1 (pid: 24787, cores: 1)
+Mon Apr 20 01:07:19 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:07:28 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2192020
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2192020 pid: 24801 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24801)
+spawned uWSGI worker 1 (pid: 24804, cores: 1)
+[pid: 24804|app: 0|req: 1/1] 123.157.213.230 () {38 vars in 602 bytes} [Mon Apr 20 01:07:40 2015] GET / => generated 21 bytes in 17 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+https://api.jd.com/routerjson?v=2.0&method=jingdong.ware.baseproduct.get&app_key=84F0963912EA9D56CD29E8EB3E774A2B&360buy_param_json={%22ids%22:%22J_1217499%22,%22base%22:%22name%22}&timestamp=2015-04-20 01:07:43
+{u'error_response': {u'en_desc': u'J_1217499\u4e0d\u7b26\u5408\u8f6c\u5316\u6574\u5f62\u6761\u4ef6', u'zh_desc': u'J_1217499\u4e0d\u7b26\u5408\u8f6c\u5316\u6574\u5f62\u6761\u4ef6', u'code': u'61'}}
+[pid: 24804|app: 0|req: 2/2] 123.157.213.230 () {40 vars in 698 bytes} [Mon Apr 20 01:07:43 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 180 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+[pid: 24804|app: 0|req: 3/3] 101.199.112.55 () {40 vars in 645 bytes} [Mon Apr 20 01:08:06 2015] GET / => generated 21 bytes in 1 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/GitRepo1/yugi/2
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (/home/GitRepo1/yugi/2/app_uwsgi.sock)
+running /home/GitRepo1/yugi/2/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/GitRepo1/yugi/2/app_uwsgi.ini
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:08:50 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x25dcf10
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x25dcf10 pid: 24801 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 24801)
+spawned uWSGI worker 1 (pid: 24816, cores: 1)
+Mon Apr 20 01:08:59 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:09:11 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x11ea020
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x11ea020 pid: 24830 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24830)
+spawned uWSGI worker 1 (pid: 24833, cores: 1)
+https://api.jd.com/routerjson?v=2.0&method=jingdong.ware.baseproduct.get&app_key=84F0963912EA9D56CD29E8EB3E774A2B&360buy_param_json={%22ids%22:%221217499%22,%22base%22:%22name%22}&timestamp=2015-04-20 01:09:24
+{u'jingdong_ware_baseproduct_get_responce': {u'product_base': [{u'sku_id': 1217499, u'name': u'\u82f9\u679c\uff08Apple\uff09iPhone 6 (A1586) 16GB \u91d1\u8272 \u79fb\u52a8\u8054\u901a\u7535\u4fe14G\u624b\u673a', u'weight': 0}], u'code': u'0'}}
+[pid: 24833|app: 0|req: 1/1] 123.157.213.230 () {40 vars in 698 bytes} [Mon Apr 20 01:09:24 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 173 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+https://api.jd.com/routerjson?v=2.0&method=jingdong.ware.baseproduct.get&app_key=84F0963912EA9D56CD29E8EB3E774A2B&360buy_param_json={%22ids%22:%221217499%22,%22base%22:%22name%22}&timestamp=2015-04-20 01:09:26
+{u'jingdong_ware_baseproduct_get_responce': {u'product_base': [{u'sku_id': 1217499, u'name': u'\u82f9\u679c\uff08Apple\uff09iPhone 6 (A1586) 16GB \u91d1\u8272 \u79fb\u52a8\u8054\u901a\u7535\u4fe14G\u624b\u673a', u'weight': 0}], u'code': u'0'}}
+[pid: 24833|app: 0|req: 2/2] 123.157.213.230 () {40 vars in 698 bytes} [Mon Apr 20 01:09:26 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 150 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/GitRepo1/yugi/2
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (/home/GitRepo1/yugi/2/app_uwsgi.sock)
+running /home/GitRepo1/yugi/2/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/GitRepo1/yugi/2/app_uwsgi.ini
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:29:23 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x18d5f10
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x18d5f10 pid: 24830 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 24830)
+spawned uWSGI worker 1 (pid: 24889, cores: 1)
+Mon Apr 20 01:29:32 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:29:42 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd32020
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xd32020 pid: 24902 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24902)
+spawned uWSGI worker 1 (pid: 24905, cores: 1)
+[pid: 24905|app: 0|req: 1/1] 123.157.213.150 () {38 vars in 650 bytes} [Mon Apr 20 01:30:36 2015] GET /jdproducts/price/1217499 => generated 233 bytes in 29 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+https://api.jd.com/routerjson?v=2.0&method=jingdong.ware.baseproduct.get&app_key=84F0963912EA9D56CD29E8EB3E774A2B&360buy_param_json={%22ids%22:%221217499%22,%22base%22:%22name%22}&timestamp=2015-04-20 01:30:42
+{u'jingdong_ware_baseproduct_get_responce': {u'product_base': [{u'sku_id': 1217499, u'name': u'\u82f9\u679c\uff08Apple\uff09iPhone 6 (A1586) 16GB \u91d1\u8272 \u79fb\u52a8\u8054\u901a\u7535\u4fe14G\u624b\u673a', u'weight': 0}], u'code': u'0'}}
+[pid: 24905|app: 0|req: 2/2] 123.157.213.150 () {40 vars in 698 bytes} [Mon Apr 20 01:30:42 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 205 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/GitRepo1/yugi/2
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (/home/GitRepo1/yugi/2/app_uwsgi.sock)
+running /home/GitRepo1/yugi/2/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/GitRepo1/yugi/2/app_uwsgi.ini
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:33:23 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd30f10
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xd30f10 pid: 24902 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 24902)
+spawned uWSGI worker 1 (pid: 24932, cores: 1)
+Mon Apr 20 01:33:32 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:33:42 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x10c9020
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x10c9020 pid: 24945 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24945)
+spawned uWSGI worker 1 (pid: 24949, cores: 1)
+https://api.jd.com/routerjson?v=2.0&method=jingdong.ware.baseproduct.get&app_key=84F0963912EA9D56CD29E8EB3E774A2B&360buy_param_json={%22ids%22:%221217499%22,%22base%22:%22name%22}&timestamp=2015-04-20 01:33:50
+{u'jingdong_ware_baseproduct_get_responce': {u'product_base': [{u'sku_id': 1217499, u'name': u'\u82f9\u679c\uff08Apple\uff09iPhone 6 (A1586) 16GB \u91d1\u8272 \u79fb\u52a8\u8054\u901a\u7535\u4fe14G\u624b\u673a', u'weight': 0}], u'code': u'0'}}
+done1
+[pid: 24949|app: 0|req: 1/1] 123.157.213.150 () {42 vars in 729 bytes} [Mon Apr 20 01:33:50 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 169 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+https://api.jd.com/routerjson?v=2.0&method=jingdong.ware.baseproduct.get&app_key=84F0963912EA9D56CD29E8EB3E774A2B&360buy_param_json={%22ids%22:%221217499%22,%22base%22:%22name%22}&timestamp=2015-04-20 01:33:53
+{u'jingdong_ware_baseproduct_get_responce': {u'product_base': [{u'sku_id': 1217499, u'name': u'\u82f9\u679c\uff08Apple\uff09iPhone 6 (A1586) 16GB \u91d1\u8272 \u79fb\u52a8\u8054\u901a\u7535\u4fe14G\u624b\u673a', u'weight': 0}], u'code': u'0'}}
+done1
+[pid: 24949|app: 0|req: 2/2] 123.157.213.150 () {40 vars in 698 bytes} [Mon Apr 20 01:33:53 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 150 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/GitRepo1/yugi/2
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (/home/GitRepo1/yugi/2/app_uwsgi.sock)
+running /home/GitRepo1/yugi/2/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/GitRepo1/yugi/2/app_uwsgi.ini
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:34:42 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1b96f10
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1b96f10 pid: 24945 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 24945)
+spawned uWSGI worker 1 (pid: 24961, cores: 1)
+Mon Apr 20 01:34:51 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:34:55 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x12a2020
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x12a2020 pid: 24973 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24973)
+spawned uWSGI worker 1 (pid: 24976, cores: 1)
+https://api.jd.com/routerjson?v=2.0&method=jingdong.ware.baseproduct.get&app_key=84F0963912EA9D56CD29E8EB3E774A2B&360buy_param_json={%22ids%22:%221217499%22,%22base%22:%22name%22}&timestamp=2015-04-20 01:34:57
+{u'jingdong_ware_baseproduct_get_responce': {u'product_base': [{u'sku_id': 1217499, u'name': u'\u82f9\u679c\uff08Apple\uff09iPhone 6 (A1586) 16GB \u91d1\u8272 \u79fb\u52a8\u8054\u901a\u7535\u4fe14G\u624b\u673a', u'weight': 0}], u'code': u'0'}}
+done1
+[pid: 24976|app: 0|req: 1/1] 123.157.213.150 () {40 vars in 698 bytes} [Mon Apr 20 01:34:57 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 169 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/GitRepo1/yugi/2
+closing all non-uwsgi socket fds > 2 (max_fd = 65535)...
+found fd 3 mapped to socket 0 (/home/GitRepo1/yugi/2/app_uwsgi.sock)
+running /home/GitRepo1/yugi/2/venv/bin/uwsgi
+[uWSGI] getting INI configuration from /home/GitRepo1/yugi/2/app_uwsgi.ini
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:36:20 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa5bf10
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xa5bf10 pid: 24973 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 24973)
+spawned uWSGI worker 1 (pid: 24990, cores: 1)
+Mon Apr 20 01:36:29 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:36:42 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd64020
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xd64020 pid: 25009 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 25009)
+spawned uWSGI worker 1 (pid: 25012, cores: 1)
+https://api.jd.com/routerjson?v=2.0&method=jingdong.ware.baseproduct.get&app_key=84F0963912EA9D56CD29E8EB3E774A2B&360buy_param_json={%22ids%22:%221217499%22,%22base%22:%22name%22}&timestamp=2015-04-20 01:36:43
+{u'jingdong_ware_baseproduct_get_responce': {u'product_base': [{u'sku_id': 1217499, u'name': u'\u82f9\u679c\uff08Apple\uff09iPhone 6 (A1586) 16GB \u91d1\u8272 \u79fb\u52a8\u8054\u901a\u7535\u4fe14G\u624b\u673a', u'weight': 0}], u'code': u'0'}}
+[pid: 25012|app: 0|req: 1/1] 123.157.213.150 () {42 vars in 728 bytes} [Mon Apr 20 01:36:43 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 168 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.10 (64bit) on [Mon Apr 20 01:41:12 2015] ***
+compiled with version: 4.8.2 on 18 April 2015 15:12:58
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ2356z6vn9Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/GitRepo1/yugi/2
+detected binary path: /home/GitRepo1/yugi/2/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your processes number limit is 3738
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/GitRepo1/yugi/2/app_uwsgi.sock fd 3
+Python version: 2.7.6 (default, Mar 22 2014, 23:03:41)  [GCC 4.8.2]
+Set PythonHome to /home/GitRepo1/yugi/2/venv
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x802020
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/GitRepo1/yugi/2/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x802020 pid: 25035 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 25035)
+spawned uWSGI worker 1 (pid: 25038, cores: 1)
+https://api.jd.com/routerjson?v=2.0&method=jingdong.ware.baseproduct.get&app_key=84F0963912EA9D56CD29E8EB3E774A2B&360buy_param_json={%22ids%22:%221217499%22,%22base%22:%22name%22}&timestamp=2015-04-20 01:41:13
+{u'jingdong_ware_baseproduct_get_responce': {u'product_base': [{u'sku_id': 1217499, u'name': u'\u82f9\u679c\uff08Apple\uff09iPhone 6 (A1586) 16GB \u91d1\u8272 \u79fb\u52a8\u8054\u901a\u7535\u4fe14G\u624b\u673a', u'weight': 0}], u'code': u'0'}}
+[pid: 25038|app: 0|req: 1/1] 123.157.213.150 () {42 vars in 728 bytes} [Mon Apr 20 01:41:13 2015] GET /api/jdproducts/price/1217499 => generated 291 bytes in 165 msecs (HTTP/1.1 500) 2 headers in 84 bytes (1 switches on core 0)
