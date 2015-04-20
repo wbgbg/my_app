@@ -231,11 +231,16 @@ def tell_client(ukd):
 
 @app.route('/api/users',methods=['POST'])	
 def new_user():
+	
 	username = request.json.get('username')
 	password = request.json.get('password')
 	if username is None or password is None:
+		print "no username"
 		abort(400)
 	if User.query.filter_by(username=username).first() is not None:
+		print username
+		print password
+		print "no user"
 		abort(400)
 	user = User(username=username)
 	user.hash_password(password)
