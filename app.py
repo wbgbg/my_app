@@ -14,7 +14,9 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.httpauth import HTTPBasicAuth
 from passlib.apps import custom_app_context as pwd_context
 from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer,BadSignature,SignatureExpired)
-
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
 
 app = Flask(__name__)
 
@@ -168,12 +170,14 @@ def product_price(hkd):
 	js = json.loads(st)
 	print js
 	name = js[u"jingdong_ware_baseproduct_get_responce"][u"product_base"][0][u"name"]
-	print name
+	print type(name)
+	#realname=name.decode("utf-8")
+	#print type(realname)
 	respon[hkd] = name
 	return(jsonify(respon),200,())
 
 
-timer(refresh_time)
+#timer(refresh_time)
 @app.route('/api/fetch/all')
 def fetch_all():
 	method="method=jingdong.ware.price.get&"
@@ -189,6 +193,34 @@ def fetch_all():
 	threads = [gevent.spawn(fetch_product,hkd) for hkd in ukd]
 	gevent.joinall(threads)
 	return "ok"
+
+def three_minute_call(signum):
+	fetch_all()
+
+uwsgi.register_signal(99,"",three_minute_call)
+uwsgi.add_timer(99,600)
+
+@app.route('/api/sendmail')
+def sendmail(hkd=0,price1=0,price2=0):
+        sender = "wbgbg123@126.com"
+        receiver = "576214465@qq.com"
+        subject = "the price of %s has changed from %s to %s" % (hkd,price1,price2)
+        smtpserver = "smtp.126.com"
+        username = "wbgbg123@126.com"
+        password = "wbgbgabc"
+
+        msg = MIMEText("",'text','utf-8')
+        msg['Subject'] = Header(subject, 'utf-8')
+	print msg.as_string()
+        smtp = smtplib.SMTP()
+        smtp.connect(smtpserver)
+        smtp.login(username,password)
+	print "ready to send"
+        smtp.sendmail(sender,receiver,msg.as_string())
+	print "finished"
+        smtp.quit()
+	return "ok"
+
 
 @app.route('/api/fetch/<hkd>')
 def fetch_product(hkd=0):
@@ -209,9 +241,10 @@ def fetch_product(hkd=0):
 #	fil.close
 	now_product = JDProduct.query.filter_by(hkd=hkd).first()
 	if now_product is not None:
-		if now_product.price != price:
+		if (now_product.price != price and (now_product.price!="-1.00" or price != "-1")):
 			print "%s price change from %s to %s" %(ukd,now_product.price,price)
 			now_product.price = price
+			sendmail(now_product.hkd,now_product.price,price)
 			db.session.commit();	
 #			tell_client(nowproduct.hkd)
 #	return (jsonify({'ukd=':ukd,'price=':price}))		
