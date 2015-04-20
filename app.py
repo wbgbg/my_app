@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding:utf8 -*-
 #elncoding = utf-8
+from gevent import monkey; monkey.patch_all()
+import gevent
 import os,sys
 import uwsgi
 import time
@@ -12,7 +14,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.httpauth import HTTPBasicAuth
 from passlib.apps import custom_app_context as pwd_context
 from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer,BadSignature,SignatureExpired)
-#from uwsgidecorators import *
+
 
 app = Flask(__name__)
 
@@ -174,29 +176,19 @@ def product_price(hkd):
 timer(refresh_time)
 @app.route('/api/fetch/all')
 def fetch_all():
-	i=1
-	j=i+10
-	respon={}
 	method="method=jingdong.ware.price.get&"
-	while (j>i) and (JDProduct.query.get(i) is not None):
-		now_product = JDProduct.query.get(i)
-
-		ukd="J_%s"%now_product.hkd
-		now=time.localtime()
-		timestamp="timestamp="+time.strftime("%Y-%m-%d %X",now)
-		sku_id="360buy_param_json={%22sku_id%22:%22"+ukd+"%22}&"
-		url=apipath+method+app_key+sku_id+timestamp
-
-		f = urllib.urlopen(url)
-		st = f.read()
-		js = json.loads(st)
-		price = js[u"jingdong_ware_price_get_responce"][u"price_changes"][0][u"price"]
-		if now_product.price != price:
-			now_product.price = price
-#			tell_client(nowproduct.hkd)
-		respon[now_product.hkd]=price
-		i=i+1
-	return (jsonify(respon),200,())
+	i=1
+	print "start working"
+#	while  (JDProduct.query.get(i) is not None):
+#		now_product = JDProduct.query.get(i)
+#		print "working on %s" %i
+#		threads = threads.append(gevent.spawn(fetch_product,now_product.hkd))
+#		print "%i finished"%i
+	product = JDProduct.query.all()
+	ukd = [prod.hkd for prod in product]
+	threads = [gevent.spawn(fetch_product,hkd) for hkd in ukd]
+	gevent.joinall(threads)
+	return "ok"
 
 @app.route('/api/fetch/<hkd>')
 def fetch_product(hkd=0):
@@ -218,13 +210,12 @@ def fetch_product(hkd=0):
 	now_product = JDProduct.query.filter_by(hkd=hkd).first()
 	if now_product is not None:
 		if now_product.price != price:
+			print "%s price change from %s to %s" %(ukd,now_product.price,price)
 			now_product.price = price
+			db.session.commit();	
 #			tell_client(nowproduct.hkd)
-	return (jsonify({'ukd=':ukd,'price=':price}))		
-#	pass
-#	return "ok"
-#	return st
-#	return js
+#	return (jsonify({'ukd=':ukd,'price=':price}))		
+	return "ok"
 
 def tell_client(ukd):
 	pass
