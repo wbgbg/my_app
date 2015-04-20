@@ -259,7 +259,7 @@ def fetch_product(hkd=0):
 #	fil.close
 	now_product = JDProduct.query.filter_by(hkd=hkd).first()
 	if now_product is not None:
-		if (now_product.price != price and not(now_priduct.price in ["-1.00","-1"] and price in ["-1.00","-1"])):
+		if (now_product.price != price and not(now_product.price in ["-1.00","-1"] and price in ["-1.00","-1"])):
 			print "%s price change from %s to %s" %(ukd,now_product.price,price)
 			now_product.price = price
 			sendmail(now_product.hkd,now_product.price,price)
