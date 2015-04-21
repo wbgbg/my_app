@@ -249,11 +249,16 @@ def fetch_product(hkd=0):
 	now=time.localtime()
 	timestamp="timestamp="+time.strftime("%Y-%m-%d %X",now)
 	url=apipath+method+app_key+sku_id+timestamp
-	f = urllib.urlopen(url)
-	st = f.read()
-	js = json.loads(st)
+	price = "-1.00"
+	trys = 5
+	while (price=="-1.00" and trys>0):
+		trys = trys-1
+		with gevent.Timeout(10,False) as timeout:
+			f = urllib.urlopen(url)
+			st = f.read()
+			js = json.loads(st)
 #	print "%s:%s:%s"%(url,st,js)
-	price = js[u"jingdong_ware_price_get_responce"][u"price_changes"][0][u"price"]
+			price = js[u"jingdong_ware_price_get_responce"][u"price_changes"][0][u"price"]
 #	fil = open("/home/nowlog",'a')
 #	fil.write(price)
 #	fil.close
@@ -261,8 +266,8 @@ def fetch_product(hkd=0):
 	if now_product is not None:
 		if (now_product.price != price and not(now_product.price in ["-1.00","-1"] and price in ["-1.00","-1"])):
 			print "%s price change from %s to %s" %(ukd,now_product.price,price)
-			now_product.price = price
 			sendmail(now_product.hkd,now_product.price,price)
+			now_product.price = price
 			db.session.commit();	
 #			tell_client(nowproduct.hkd)
 #	return (jsonify({'ukd=':ukd,'price=':price}))		
