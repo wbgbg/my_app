@@ -2,6 +2,12 @@
 # -*- coding:utf8 -*-
 #coding=utf-8
 #encoding=utf-8
+"""
+	JDSpider/网购商品报警器 是一款用于实时获取京东商品降价信息的的客户端/服务器结构程序.其中,服务器端通过异步io高效的从京东获取实时商品价格,与数据库内存储的价格对比后反馈给客户端.
+"""
+__author__= 'yugi/boge wang'
+__version__= '0.1'
+
 from gevent import monkey; monkey.patch_all()
 import gevent
 import os,sys
